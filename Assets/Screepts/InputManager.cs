@@ -1,0 +1,43 @@
+using System;
+using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
+
+public class InputManager : MonoBehaviour
+{
+    public static event Action OnSpacePressed;
+    public static event Action OnLeftMouseButtonPressed;
+    public static event Action OnFPressed;
+    public static event Action<Vector2> OnMovementPressed;
+
+
+    public void OnSpacePressede(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnSpacePressed?.Invoke();
+        }
+    }
+    public void OnLeftMouseButtonPresse(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnLeftMouseButtonPressed?.Invoke();
+        }
+    }
+    public void OnFPresse(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnFPressed?.Invoke();
+        }
+    }
+
+    public void OnMovePressede(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Vector2 move = context.ReadValue<Vector2>();
+            OnMovementPressed?.Invoke(move);
+        }
+    }
+}
