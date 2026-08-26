@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour
     }
     public void OnFPresse(CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
             OnFPressed?.Invoke();
         }
