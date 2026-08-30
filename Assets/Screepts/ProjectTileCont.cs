@@ -7,6 +7,12 @@ public class ProjectTileCont : MonoBehaviour
     private int _damage = 10;
     [SerializeField] private float _lifeTime = 5f;
     private float _timer = 0;
+    
+    public void Initialized(int damage, Vector3 pushDirection)
+    {
+        _damage = damage;
+        _rb.AddForce(pushDirection*_pushForce, ForceMode.Impulse);
+    }
 
     private void Update()
     {
@@ -24,12 +30,12 @@ public class ProjectTileCont : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<PlayerCont>(out PlayerCont player))
         {
-            //  player.TakeDamage(_damage);
+             player.TakeDamage(_damage);
             OnExplosion();
         }
         else if (collision.gameObject.TryGetComponent<EnemyCont>(out EnemyCont enemy))
         {
-            //  enemy.TakeDamage(_damage);
+             enemy.TakeDamage(_damage);
             OnExplosion();
         }
         else OnExplosion();
