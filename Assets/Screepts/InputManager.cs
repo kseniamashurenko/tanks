@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
     public static event Action OnSpacePressed;
     public static event Action OnLeftMouseButtonPressed;
     public static event Action OnFPressed;
+    public static event Action<bool> OnShiftPressed;
     public static event Action<Vector2> OnMovementPressed;
 
 
@@ -38,6 +39,21 @@ public class InputManager : MonoBehaviour
         {
             Vector2 move = context.ReadValue<Vector2>();
             OnMovementPressed?.Invoke(move);
+        }
+        if (context.canceled)
+        {
+            OnMovementPressed?.Invoke(Vector2.zero);
+        }
+    }
+    public void OnShiftPressede(CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnShiftPressed?.Invoke(true);
+        }
+        else if (context.canceled)
+        {
+            OnShiftPressed?.Invoke(false);
         }
     }
 }

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f54857a545d03c54a99df42b75fa3a70
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 285021
+  packageName: Stylized Character Tutorial Agent (TUT)
+  packageVersion: 1.0
+  assetPath: Assets/iDos Games/CHARACTERS/Tutorial Agent/Demo/LightingData.asset
+  uploadId: 797776

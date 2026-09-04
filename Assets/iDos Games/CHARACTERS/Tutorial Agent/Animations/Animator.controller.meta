@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 065940c4d6826ce49a121b4e1f206047
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 285021
+  packageName: Stylized Character Tutorial Agent (TUT)
+  packageVersion: 1.0
+  assetPath: Assets/iDos Games/CHARACTERS/Tutorial Agent/Animations/Animator.controller
+  uploadId: 797776
