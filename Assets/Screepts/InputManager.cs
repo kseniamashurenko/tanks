@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
     public static event Action OnFPressed;
     public static event Action<bool> OnShiftPressed;
     public static event Action<Vector2> OnMovementPressed;
+    public static event Action<Vector2> OnLookPressed;
 
 
     public void OnSpacePressede(CallbackContext context)
@@ -43,6 +44,18 @@ public class InputManager : MonoBehaviour
         if (context.canceled)
         {
             OnMovementPressed?.Invoke(Vector2.zero);
+        }
+    }
+    public void OnLookPressede(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Vector2 look = context.ReadValue<Vector2>();
+            OnLookPressed?.Invoke(look);
+        }
+        if (context.canceled)
+        {
+            OnLookPressed?.Invoke(Vector2.zero);
         }
     }
     public void OnShiftPressede(CallbackContext context)
